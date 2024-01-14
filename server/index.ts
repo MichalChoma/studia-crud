@@ -186,6 +186,16 @@ app.post("/blogs", verifyToken, async (req, res) => {
   const { title, content } = req.body;
   const authorId = req.user?.id;
 
+  if (title.length < 5 && title.length > 20) {
+    return res
+      .status(400)
+      .json({ error: "Title length must be between 5 , 20" });
+  }
+
+  if (content.length < 5) {
+    return res.status(400).json({ error: "Content length must be at least 5" });
+  }
+
   try {
     if (authorId) {
       const blog = await prisma.blog.create({

@@ -51,12 +51,22 @@ const CreateBlogForm = () => {
           <label htmlFor="title">Title: </label>
           <input
             type="text"
-            {...register("title", { required: "Title is required" })}
+            {...register("title", {
+              required: "Title is required",
+              minLength: {
+                value: 5,
+                message: "Title must be at least 5 characters",
+              },
+              maxLength: {
+                value: 20,
+                message: "Title must not exceed 20 characters",
+              },
+            })}
             className="max-w-[390px] flex-grow border rounded hover:border-darkGreen transition ease-in-out delay-150 active:border-primary focus:outline-none focus:ring focus:ring-primary"
           />
         </div>
         {errors.title && (
-          <span className="text-red-500 transition ease-in-out delay-150">
+          <span className="text-red-500 transition ease-in-out delay-150 mx-auto mt-2">
             {errors.title.message}
           </span>
         )}
@@ -66,12 +76,18 @@ const CreateBlogForm = () => {
         <div className="flex flex-row justify-center gap-4">
           <label htmlFor="content">Content: </label>
           <textarea
-            {...register("content", { required: "content is required" })}
+            {...register("content", {
+              required: "content is required",
+              minLength: {
+                value: 5,
+                message: "Content must be at least 5 characters",
+              },
+            })}
             className="max-w-[390px] h-[120px] flex-grow border rounded hover:border-darkGreen transition ease-in-out delay-150 focus:outline-none focus:ring focus:ring-primary"
           />
         </div>
         {errors.content && (
-          <span className="text-red-500 transition ease-in-out delay-150">
+          <span className="text-red-500 transition ease-in-out delay-150 mx-auto mt-2">
             {errors.content.message}
           </span>
         )}
