@@ -1,0 +1,12 @@
+.mobile {
+  background-image: url("../../assets/images/bg-header-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.desktop {
+  background-image: url("../../assets/images/bg-header-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

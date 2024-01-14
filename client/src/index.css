@@ -8,4 +8,15 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "League Spartan", sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-background border border-background text-primary px-4 rounded md:hover:bg-primary md:hover:text-background transition ease-in-out delay-150;
+  }
+
+  .btn-secondary {
+    @apply rounded bg-primary md:hover:bg-white md:hover:text-primary border border-primary transition ease-in-out delay-150 text-white;
+  }
 }
