@@ -1,0 +1,13 @@
+version: "3"
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: "baza_blogpost"
+      POSTGRES_USER: "moj_admin"
+      POSTGRES_PASSWORD: "nowe_haslo"
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./sql-backup:/dbbackup"
+      - "./init-scripts:/docker-entrypoint-initdb.d/"
