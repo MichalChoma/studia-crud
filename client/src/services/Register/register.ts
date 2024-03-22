@@ -2,7 +2,7 @@ import { UseMutationResult, useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { ILoginData, ILoginResponse } from "../Login/types";
 
-const useLogin = (): UseMutationResult<
+const useRegister = (): UseMutationResult<
   ILoginResponse,
   AxiosError<{ error: string }>,
   ILoginData,
@@ -24,4 +24,4 @@ const useLogin = (): UseMutationResult<
   });
 };
 
-export default useLogin;
+export default useRegister;
